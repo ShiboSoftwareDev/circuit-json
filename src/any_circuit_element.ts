@@ -90,6 +90,7 @@ export const any_circuit_element = z.union([
   pcb.pcb_footprint_overlap_error,
   pcb.pcb_breakout_point,
   pcb.pcb_cutout,
+  pcb.pcb_fiducial,
   pcb.pcb_ground_plane,
   pcb.pcb_ground_plane_region,
   pcb.pcb_thermal_spoke,

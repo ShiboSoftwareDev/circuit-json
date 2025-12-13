@@ -39,6 +39,7 @@ export * from "./pcb_note_path"
 export * from "./pcb_note_line"
 export * from "./pcb_note_dimension"
 export * from "./pcb_footprint_overlap_error"
+export * from "./pcb_fiducial"
 export * from "./pcb_keepout"
 export * from "./pcb_cutout"
 export * from "./pcb_missing_footprint_error"
@@ -95,6 +96,7 @@ import type { PcbNoteLine } from "./pcb_note_line"
 import type { PcbNoteDimension } from "./pcb_note_dimension"
 import type { PcbAutoroutingError } from "./pcb_autorouting_error"
 import type { PcbFootprintOverlapError } from "./pcb_footprint_overlap_error"
+import type { PcbFiducial } from "./pcb_fiducial"
 import type { PcbCutout } from "./pcb_cutout"
 import type { PcbBreakoutPoint } from "./pcb_breakout_point"
 import type { PcbGroundPlane } from "./pcb_ground_plane"
@@ -147,6 +149,7 @@ export type PcbCircuitElement =
   | PcbNoteDimension
   | PcbAutoroutingError
   | PcbFootprintOverlapError
+  | PcbFiducial
   | PcbCutout
   | PcbBreakoutPoint
   | PcbGroundPlane
