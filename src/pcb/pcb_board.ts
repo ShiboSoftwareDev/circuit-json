@@ -18,6 +18,8 @@ export const pcb_board = z
     is_subcircuit: z.boolean().optional(),
     subcircuit_id: z.string().optional(),
     is_mounted_to_carrier_board: z.boolean().optional(),
+    board_to_board_distance: length.optional(),
+    mount_orientation: z.enum(["face_down", "face_up"]).optional(),
     width: length.optional(),
     height: length.optional(),
     center: point,
@@ -55,6 +57,8 @@ export interface PcbBoard {
   is_subcircuit?: boolean
   subcircuit_id?: string
   is_mounted_to_carrier_board?: boolean
+  board_to_board_distance?: Length
+  mount_orientation?: "face_down" | "face_up"
   width?: Length
   height?: Length
   display_offset_x?: string
