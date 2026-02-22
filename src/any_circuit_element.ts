@@ -46,6 +46,7 @@ export const any_circuit_element = z.union([
   src.source_pin_missing_trace_warning,
   src.source_pin_must_be_connected_error,
   src.unknown_error_finding_part,
+  src.source_i2c_misconfigured_error,
   pcb.pcb_component,
   pcb.pcb_hole,
   pcb.pcb_missing_footprint_error,
