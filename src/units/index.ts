@@ -1,5 +1,7 @@
 import { parseAndConvertSiUnit } from "src/utils/convert-si-unit-to-number"
 import { z } from "zod"
+export { parseComponentQuantity } from "./parse-component-quantity"
+import { parseComponentQuantity } from "./parse-component-quantity"
 
 // // Currently, removing uncommon SI Prefixes for type simplicity.
 // export type SIPrefix =
@@ -56,12 +58,12 @@ import { z } from "zod"
 export const resistance = z
   .string()
   .or(z.number())
-  .transform((v) => parseAndConvertSiUnit(v).value!)
+  .transform(parseComponentQuantity)
 
 export const capacitance = z
   .string()
   .or(z.number())
-  .transform((v) => parseAndConvertSiUnit(v).value!)
+  .transform(parseComponentQuantity)
   .transform((value) => {
     return Number.parseFloat(value.toPrecision(12)) // Round to 12 significant digits
   })
@@ -69,12 +71,12 @@ export const capacitance = z
 export const inductance = z
   .string()
   .or(z.number())
-  .transform((v) => parseAndConvertSiUnit(v).value!)
+  .transform(parseComponentQuantity)
 
 export const voltage = z
   .string()
   .or(z.number())
-  .transform((v) => parseAndConvertSiUnit(v).value!)
+  .transform(parseComponentQuantity)
 
 export const length = z
   .string()
@@ -84,7 +86,7 @@ export const length = z
 export const frequency = z
   .string()
   .or(z.number())
-  .transform((v) => parseAndConvertSiUnit(v).value!)
+  .transform(parseComponentQuantity)
 
 /**
  * Length in meters
@@ -97,7 +99,7 @@ export const distance = length
 export const current = z
   .string()
   .or(z.number())
-  .transform((v) => parseAndConvertSiUnit(v).value!)
+  .transform(parseComponentQuantity)
 
 export const duration_ms = z
   .string()
